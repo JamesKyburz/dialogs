@@ -27,7 +27,11 @@ function dialog (opt) {
 }
 
 function render(type, title, defaultValue, cb) {
-  if (typeof defaultValue === 'function') {
+  if (typeof title === 'function') {
+    cb = title
+    defaultValue = ''
+    title = ''
+  } else if (typeof defaultValue === 'function') {
     cb = defaultValue
     defaultValue = ''
   }
