@@ -14,7 +14,7 @@ function dialog (opt) {
     'img': {src: opt.icon || ''},
     '.ok': opt.ok || 'OK',
     '.cancel': opt.cancel || 'Cancel',
-    '.url': window.location.host
+    '.url': window.location.hostname
   }
 
   insertCss(opt.style || css)
