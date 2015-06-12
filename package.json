@@ -1,6 +1,6 @@
 {
   "name": "dialogs",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "non blocking alert confirm and prompt dialogs",
   "keywords": [
     "alert",
