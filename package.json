@@ -1,0 +1,35 @@
+{
+  "name": "dialogs",
+  "version": "1.0.0",
+  "description": "non blocking alert confirm and prompt dialogs",
+  "keywords": [
+    "alert",
+    "confirm",
+    "prompt",
+    "dialog",
+    "electron",
+    "chrome extentions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jameskyburz/dialogs.git"
+  },
+  "author": {
+    "name": "James Kyburz",
+    "email": "james.kyburz@gmail.com"
+  },
+  "main": "index.js",
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
+  "dependencies": {
+    "brfs": "^1.2.0",
+    "extend": "^2.0.1",
+    "hyperglue": "^2.0.1",
+    "insert-css": "^0.2.0",
+    "xtend": "^4.0.0"
+  },
+  "license": "MIT"
+}
