@@ -39,11 +39,14 @@ function render(type, title, defaultValue, cb) {
   var el = glue(html, opt)
   document.body.appendChild(background)
   document.body.appendChild(el)
+
+  if (type === 'prompt') el.querySelector('input').focus()
   eventListeners('addEventListener')
 
   function eventListeners(method) {
     el.querySelector('.ok')[method]('click', ok)
     el.querySelector('.cancel')[method]('click', cancel)
+    el.querySelector('form')[method]('submit', ok)
   }
 
   function cancel() {
@@ -51,7 +54,8 @@ function render(type, title, defaultValue, cb) {
     cleanup()
   }
 
-  function ok() {
+  function ok(e) {
+    e.preventDefault()
     if (type === 'confirm' || type === 'alert') cb(true)
     if (type === 'prompt') cb(el.querySelector('input').value)
     cleanup()
