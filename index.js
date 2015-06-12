@@ -40,7 +40,12 @@ function render(type, title, defaultValue, cb) {
   document.body.appendChild(background)
   document.body.appendChild(el)
 
-  if (type === 'prompt') el.querySelector('input').focus()
+  if (type === 'prompt') {
+    el.querySelector('input').focus()
+  } else {
+    el.querySelector('.ok').focus()
+  }
+
   eventListeners('addEventListener')
 
   function eventListeners(method) {
