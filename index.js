@@ -45,7 +45,9 @@ function render(type, title, defaultValue, cb) {
   document.body.appendChild(el)
 
   if (type === 'prompt') {
-    el.querySelector('input').focus()
+    var input = el.querySelector('input')
+    input.focus()
+    if (defaultValue) input.select()
   } else {
     el.querySelector('.ok').focus()
   }
