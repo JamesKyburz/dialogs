@@ -10,7 +10,7 @@ module.exports = dialog
 
 function dialog (opt) {
   opt = opt || {}
-  var opt = {
+  opt = {
     'img': {src: opt.icon || ''},
     '.ok': opt.ok || 'OK',
     '.cancel': opt.cancel || 'Cancel',
@@ -26,7 +26,7 @@ function dialog (opt) {
   }
 }
 
-function render(type, title, defaultValue, cb) {
+function render (type, title, defaultValue, cb) {
   if (typeof title === 'function') {
     cb = title
     defaultValue = ''
@@ -54,25 +54,25 @@ function render(type, title, defaultValue, cb) {
 
   eventListeners('addEventListener')
 
-  function eventListeners(method) {
+  function eventListeners (method) {
     el.querySelector('.ok')[method]('click', ok)
     el.querySelector('.cancel')[method]('click', cancel)
     el.querySelector('form')[method]('submit', ok)
   }
 
-  function cancel() {
+  function cancel () {
     cb()
     cleanup()
   }
 
-  function ok(e) {
+  function ok (e) {
     e.preventDefault()
     if (type === 'confirm' || type === 'alert') cb(true)
     if (type === 'prompt') cb(el.querySelector('input').value)
     cleanup()
   }
 
-  function cleanup() {
+  function cleanup () {
     eventListeners('removeEventListener')
     document.body.removeChild(el)
     document.body.removeChild(background)
