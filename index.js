@@ -36,6 +36,10 @@ function render (type, title, defaultValue, cb) {
     cb = defaultValue
     defaultValue = ''
   }
+
+  if (type === 'alert') cb = cb || function noop() {}
+  if (!cb) throw new Error(type + ' needs a callback')
+
   var opt = xtend(this)
   opt['.type'] = {'class': 'dialog-widget ' + type}
   opt['.title'] = title
