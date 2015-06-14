@@ -22,7 +22,8 @@ function dialog (opt) {
   return {
     alert: render.bind(opt, 'alert'),
     confirm: render.bind(opt, 'confirm'),
-    prompt: render.bind(opt, 'prompt')
+    prompt: render.bind(opt, 'prompt'),
+    cancel: cancelOpenDialog
   }
 }
 
@@ -41,6 +42,7 @@ function render (type, title, defaultValue, cb) {
   opt['input'] = {value: defaultValue || ''}
   var background = glue('<div class="dialog-widget background"></div>')
   var el = glue(html, opt)
+  cancelOpenDialog.fn = cancel
   document.body.appendChild(background)
   document.body.appendChild(el)
 
@@ -76,5 +78,10 @@ function render (type, title, defaultValue, cb) {
     eventListeners('removeEventListener')
     document.body.removeChild(el)
     document.body.removeChild(background)
+    delete cancelOpenDialog.fn
   }
+}
+
+function cancelOpenDialog() {
+  if (cancelOpenDialog.fn) cancelOpenDialog.fn()
 }

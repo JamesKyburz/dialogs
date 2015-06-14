@@ -8,18 +8,26 @@ Try it out! [![view on requirebin](http://requirebin.com/badge.png)](http://requ
 
 use with [browserify](http://browserify.org):
 
-# main
+# methods
+
 ``` js
-var dialogs = require('dialogs')
+var Dialogs = require('dialogs')
 ```
 
-## var d = dialogs(opts={})
+## var dialogs = Dialogs(opts={})
 
-`ok` default OK
+opts.ok default OK
 
-`cancel` default Cancel
+opts.cancel default Cancel
 
-`icon` optional url for icon
+opts.icon optional url for icon
+
+## dialogs.alert([text], cb)
+## dialogs.prompt([text], [default], cb)
+## dialogs.confirm([text], cb)
+## dialogs.cancel()
+
+Shortcut to cancel the open dialog if exists.
 
 # example
 
@@ -37,8 +45,6 @@ dialogs.alert('okidoki', function(ok) {
   })
 })
 ```
-
-The signature of `alert`, `confirm` and `prompt` are the same as the native ones with an extra callback argument.
 
 # install
 
