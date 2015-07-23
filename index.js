@@ -46,6 +46,7 @@ function render (type, title, defaultValue, cb) {
   opt['input'] = {value: defaultValue || ''}
   var background = glue('<div class="dialog-widget background"></div>')
   var el = glue(html, opt)
+  el.setAttribute('data-icon', !!opt.img)
   cancelOpenDialog.fn = cancel
   document.body.appendChild(background)
   document.body.appendChild(el)

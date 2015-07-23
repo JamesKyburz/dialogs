@@ -59,6 +59,13 @@
 .dialog-widget .url {
   text-align: center;
   font-size: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dialog-widget[data-icon="true"] .url {
+  margin-left: 40px;
 }
 
 .dialog-widget .title {
