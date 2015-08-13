@@ -54,7 +54,7 @@ function render (type, title, defaultValue, cb) {
   if (type === 'prompt') {
     var input = el.querySelector('input')
     input.focus()
-    if (defaultValue) input.select()
+    if (defaultValue) input.setSelectionRange(0, defaultValue.length)
   } else {
     el.querySelector('.ok').focus()
   }
