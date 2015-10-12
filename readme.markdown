@@ -4,6 +4,8 @@ non blocking `confirm`, `alert` and `prompt` dialogs.
 
 Theses native counterparts block the UI thread, are are not allowed in electron and some chrome extention contexts.
 
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 Try it out! [![view on requirebin](http://requirebin.com/badge.png)](http://requirebin.com/embed?gist=5b6d6b63f8709deb3b5a)
 
 use with [browserify](http://browserify.org):

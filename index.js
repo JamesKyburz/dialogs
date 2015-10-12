@@ -37,7 +37,7 @@ function render (type, title, defaultValue, cb) {
     defaultValue = ''
   }
 
-  if (type === 'alert') cb = cb || function noop() {}
+  if (type === 'alert') cb = cb || function noop () {}
   if (!cb) throw new Error(type + ' needs a callback')
 
   var opt = xtend(this)
@@ -87,6 +87,6 @@ function render (type, title, defaultValue, cb) {
   }
 }
 
-function cancelOpenDialog() {
+function cancelOpenDialog () {
   if (cancelOpenDialog.fn) cancelOpenDialog.fn()
 }
