@@ -22,6 +22,8 @@ opts.ok default OK
 
 opts.cancel default Cancel
 
+opts.hostname default location.hostname
+
 opts.icon optional url for icon
 
 ## dialogs.alert([text], cb)
