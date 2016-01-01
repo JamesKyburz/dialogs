@@ -28,7 +28,7 @@
     "prepublish": "standard"
   },
   "dependencies": {
-    "brfs": "1.4.1",
+    "brfs": "1.4.2",
     "hyperglue": "2.0.1",
     "insert-css": "0.2.0",
     "xtend": "4.0.1"
