@@ -65,11 +65,16 @@ function render (type, title, defaultValue, cb) {
     el.querySelector('.ok')[method]('click', ok)
     el.querySelector('.cancel')[method]('click', cancel)
     el.querySelector('form')[method]('submit', ok)
+    window[method]('keydown', keydown)
   }
 
   function cancel () {
     cb()
     cleanup()
+  }
+
+  function keydown (e) {
+    if (e.keyCode === 27) cancelOpenDialog()
   }
 
   function ok (e) {
