@@ -2,9 +2,10 @@ var fs = require('fs')
 var glue = require('hyperglue')
 var insertCss = require('insert-css')
 var xtend = require('xtend')
+var path = require('path')
 
-var css = fs.readFileSync(__dirname + '/style.css', 'utf-8')
-var html = fs.readFileSync(__dirname + '/index.html', 'utf-8')
+var css = fs.readFileSync(path.join(__dirname, '/style.css'), 'utf-8')
+var html = fs.readFileSync(path.join(__dirname, '/index.html'), 'utf-8')
 
 module.exports = dialog
 
