@@ -34,7 +34,7 @@
     "xtend": "4.0.1"
   },
   "devDependencies": {
-    "standard": "6.0.5"
+    "standard": "6.0.7"
   },
   "license": "MIT"
 }
