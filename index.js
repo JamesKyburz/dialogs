@@ -67,6 +67,16 @@ function render (type, title, defaultValue, cb) {
     el.querySelector('.cancel')[method]('click', cancel)
     el.querySelector('form')[method]('submit', ok)
     window[method]('keydown', keydown)
+    window[method]('focus', supress, true)
+  }
+
+  function supress (e) {
+    var node = e.target
+    while (node) {
+      if (node.classList && node.classList.contains('dialog-widget')) return
+      node = node.parentNode
+    }
+    setTimeout(function () { e.target.blur() })
   }
 
   function cancel () {
