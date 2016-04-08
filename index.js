@@ -24,11 +24,18 @@ function dialog (opt) {
     alert: render.bind(opt, 'alert'),
     confirm: render.bind(opt, 'confirm'),
     prompt: render.bind(opt, 'prompt'),
+    promptPassword: render.bind(opt, 'promptPassword'),
     cancel: cancelOpenDialog
   }
 }
 
 function render (type, title, defaultValue, cb) {
+
+  var inputPassword = type == 'promptPassword';
+  if (inputPassword) {
+    type = 'prompt';
+  }
+
   if (typeof title === 'function') {
     cb = title
     defaultValue = ''
@@ -45,6 +52,9 @@ function render (type, title, defaultValue, cb) {
   opt['.type'] = {'class': 'dialog-widget ' + type}
   opt['.title'] = title
   opt['input'] = {value: defaultValue || ''}
+  if (inputPassword) {
+    opt['input']['type'] = 'password';
+  }
   var background = glue('<div class="dialog-widget background"></div>')
   var el = glue(html, opt)
   el.setAttribute('data-icon', !!opt.img)
