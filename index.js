@@ -30,10 +30,9 @@ function dialog (opt) {
 }
 
 function render (type, title, defaultValue, cb) {
-
-  var inputPassword = type == 'promptPassword';
+  var inputPassword = type === 'promptPassword'
   if (inputPassword) {
-    type = 'prompt';
+    type = 'prompt'
   }
 
   if (typeof title === 'function') {
@@ -53,7 +52,7 @@ function render (type, title, defaultValue, cb) {
   opt['.title'] = title
   opt['input'] = {value: defaultValue || ''}
   if (inputPassword) {
-    opt['input']['type'] = 'password';
+    opt['input']['type'] = 'password'
   }
   var background = glue('<div class="dialog-widget background"></div>')
   var el = glue(html, opt)
