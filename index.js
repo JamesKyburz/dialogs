@@ -12,7 +12,7 @@ module.exports = dialog
 function dialog (opt) {
   opt = opt || {}
   opt = {
-    'img': {src: opt.icon || ''},
+    '.img': {src: opt.icon || ''},
     '.ok': opt.ok || 'OK',
     '.cancel': opt.cancel || 'Cancel',
     '.url': opt.hostname || window.location.hostname
