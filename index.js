@@ -56,7 +56,7 @@ function render (type, title, defaultValue, cb) {
   }
   var background = glue('<div class="dialog-widget background"></div>')
   var el = glue(html, opt)
-  el.setAttribute('data-icon', !!opt.img)
+  el.setAttribute('data-icon', !!opt.img.src)
   cancelOpenDialog.fn = cancel
   document.body.appendChild(background)
   document.body.appendChild(el)
