@@ -25,7 +25,8 @@
     ]
   },
   "scripts": {
-    "prepublish": "standard"
+    "prepublish": "standard",
+    "preversion": "standard"
   },
   "dependencies": {
     "brfs": "1.4.3",
