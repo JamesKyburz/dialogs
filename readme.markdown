@@ -1,5 +1,7 @@
 # dialogs
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JamesKyburz/dialogs.svg)](https://greenkeeper.io/)
+
 non blocking `confirm`, `alert` and `prompt` dialogs.
 
 Theses native counterparts block the UI thread, are are not allowed in electron and some chrome extention contexts.
