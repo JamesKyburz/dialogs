@@ -66,7 +66,7 @@ function render (type, title, defaultValue, cb) {
     input.focus()
     if (defaultValue) input.setSelectionRange(0, defaultValue.length)
   } else {
-    el.querySelector('.ok').focus()
+    el.querySelector('.cancel').focus()
   }
 
   eventListeners('addEventListener')
