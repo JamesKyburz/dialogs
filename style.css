@@ -23,6 +23,21 @@
   font-family: arial;
 }
 
+.dialog-widget.disclaimer {
+  position: fixed;
+  left: calc(50% - 250px);
+  width: 500px;
+  top: calc(50% - 165px);
+  border: solid 1px #ddd;
+  background: whitesmoke;
+  z-index: 10000;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+  padding: 15px 10px 15px 10px;
+  font-family: arial;
+}
+
 .dialog-widget img {
   width: 40px;
   height: 40px;
@@ -37,9 +52,10 @@
   display: none;
 }
 
-.dialog-widget.confirm input {
+.dialog-widget.confirm input, .dialog-widget.disclaimer input {
   display: none;
 }
+
 
 .dialog-widget.alert .ok {
   margin-top: 15px;
@@ -65,12 +81,28 @@
   font-weight: bold;
 }
 
+.dialog-widget.disclaimer .url {
+  text-align: center;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  /*font-weight: bold;*/
+    color:black;
+}
+
 .dialog-widget[data-icon="true"] .url {
   margin-left: 40px;
 }
 
 .dialog-widget .title {
   text-align: center;
+  display:block;
+  font-size: 14px;
+}
+
+.dialog-widget.disclaimer .title {
+  text-align: justify;
   display:block;
   font-size: 14px;
 }
