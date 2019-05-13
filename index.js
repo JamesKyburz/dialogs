@@ -44,9 +44,6 @@ function render (type, title, defaultValue, cb) {
     defaultValue = ''
   }
 
-  if (type === 'alert') cb = cb || function noop () {}
-  if (!cb) throw new Error(type + ' needs a callback')
-
   var opt = xtend(this)
   opt['.type'] = { class: 'dialog-widget ' + type }
   opt['.title'] = {
@@ -72,6 +69,13 @@ function render (type, title, defaultValue, cb) {
   }
 
   eventListeners('addEventListener')
+
+  if (!cb) {
+    cb = function noop () {}
+    return new Promise(function (resolve, reject) {
+      cb = resolve
+    })
+  }
 
   function eventListeners (method) {
     el.querySelector('.ok')[method]('click', ok)
