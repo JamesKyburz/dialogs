@@ -29,7 +29,7 @@
     "preversion": "standard"
   },
   "dependencies": {
-    "brfs": "1.4.3",
+    "brfs": "2.0.2",
     "hyperglue": "2.0.1",
     "insert-css": "2.0.0",
     "xtend": "4.0.1"
