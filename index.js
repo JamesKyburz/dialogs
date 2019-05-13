@@ -103,6 +103,7 @@ function render (type, title, defaultValue, cb) {
 
   function ok (e) {
     e.preventDefault()
+    // eslint-disable-next-line
     if (type === 'confirm' || type === 'alert') cb(true)
     if (type === 'prompt') cb(el.querySelector('input').value)
     cleanup()
