@@ -12,7 +12,7 @@ module.exports = dialog
 function dialog (opt) {
   opt = opt || {}
   opt = {
-    'img': {src: opt.icon || ''},
+    img: { src: opt.icon || '' },
     '.ok': opt.ok || 'OK',
     '.cancel': opt.cancel || 'Cancel',
     '.url': opt.hostname || window.location.hostname
@@ -48,9 +48,11 @@ function render (type, title, defaultValue, cb) {
   if (!cb) throw new Error(type + ' needs a callback')
 
   var opt = xtend(this)
-  opt['.type'] = {'class': 'dialog-widget ' + type}
-  opt['.title'] = title
-  opt['input'] = {value: defaultValue || ''}
+  opt['.type'] = { class: 'dialog-widget ' + type }
+  opt['.title'] = {
+    _html: (title || '').replace(/<[^>]+>/g).replace(/\n/, '<br>')
+  }
+  opt['input'] = { value: defaultValue || '' }
   if (inputPassword) {
     opt['input']['type'] = 'password'
   }
@@ -85,7 +87,9 @@ function render (type, title, defaultValue, cb) {
       if (node.classList && node.classList.contains('dialog-widget')) return
       node = node.parentNode
     }
-    setTimeout(function () { e.target.blur() })
+    setTimeout(function () {
+      e.target.blur()
+    })
   }
 
   function cancel () {
