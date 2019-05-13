@@ -37,13 +37,15 @@ Shortcut to cancel the open dialog if exists.
 # example
 
 ``` js
-dialogs.alert('okidoki', function(ok) {
+const Dialogs = require('dialogs')
+const dialogs = Dialogs()
+dialogs.alert('okidoki', ok => {
   console.log('alert', ok)
-  dialogs.confirm('ok?', function(ok) {
+  dialogs.confirm('ok?', ok => {
     console.log('confirm', ok)
-    dialogs.prompt('username', 'joe.smith@gmail.com', function(ok) {
+    dialogs.prompt('username', 'joe.smith@gmail.com', ok => {
       console.log('prompt with default', ok)
-      dialogs.prompt('username', function(ok) {
+      dialogs.prompt('username', ok => {
         console.log('prompt', ok)
       })
     })
